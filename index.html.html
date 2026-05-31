@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akarsh Kesthur | Student Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f5f7fb;
+color:#1e293b;
+}
+
+header{
+background:linear-gradient(135deg,#001f54,#003566);
+color:white;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo img{
+height:60px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:500;
+}
+
+nav a:hover{
+color:#f0b429;
+}
+
+.hero{
+min-height:90vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:60px 8%;
+background:white;
+}
+
+.hero-left{
+flex:1;
+}
+
+.hero-left h3{
+color:#f0b429;
+font-size:22px;
+}
+
+.hero-left h1{
+font-size:60px;
+color:#001f54;
+margin:10px 0;
+}
+
+.hero-left p{
+font-size:18px;
+line-height:1.8;
+max-width:650px;
+}
+
+.gpa{
+display:inline-block;
+margin-top:25px;
+background:#16a34a;
+color:white;
+padding:12px 25px;
+border-radius:30px;
+font-weight:600;
+}
+
+.hero-right{
+flex:1;
+display:flex;
+justify-content:center;
+}
+
+.hero-right img{
+width:320px;
+border-radius:25px;
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+section{
+padding:70px 8%;
+}
+
+.section-title{
+font-size:34px;
+color:#001f54;
+margin-bottom:30px;
+border-left:6px solid #f0b429;
+padding-left:15px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+.info-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.info-item{
+padding:15px;
+background:#f8fafc;
+border-radius:10px;
+}
+
+.info-item strong{
+color:#001f54;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+background:white;
+overflow:hidden;
+border-radius:15px;
+}
+
+th{
+background:#001f54;
+color:white;
+padding:15px;
+}
+
+td{
+padding:15px;
+border-bottom:1px solid #e5e7eb;
+text-align:center;
+}
+
+tr:hover{
+background:#f8fafc;
+}
+
+.achievement-layout{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+align-items:center;
+}
+
+.achievement-layout img{
+width:100%;
+border-radius:15px;
+}
+
+ul li{
+margin-bottom:15px;
+line-height:1.8;
+}
+
+.goal-box{
+background:linear-gradient(135deg,#001f54,#003566);
+color:white;
+padding:35px;
+border-radius:20px;
+line-height:1.9;
+}
+
+.placement{
+text-align:center;
+padding:40px;
+font-size:20px;
+}
+
+.contact{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.contact div{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+footer{
+background:#001f54;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:50px;
+}
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-left h1{
+font-size:40px;
+}
+
+.hero-right{
+margin-top:30px;
+}
+
+.info-grid,
+.achievement-layout,
+.contact{
+grid-template-columns:1fr;
+}
+
+}
+.achievement-slider{
+    position:relative;
+    width:100%;
+    max-width:500px;
+    height:320px;
+    margin:auto;
+    overflow:hidden;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    top:0;
+    left:0;
+    opacity:0;
+    animation:fadeSlider 15s infinite;
+}
+
+.slide:nth-child(1){
+    animation-delay:0s;
+}
+
+.slide:nth-child(2){
+    animation-delay:5s;
+}
+
+.slide:nth-child(3){
+    animation-delay:10s;
+}
+
+@keyframes fadeSlider{
+
+    0%{
+        opacity:0;
+        transform:scale(1.03);
+    }
+
+    8%{
+        opacity:1;
+        transform:scale(1);
+    }
+
+    30%{
+        opacity:1;
+        transform:scale(1);
+    }
+
+    38%{
+        opacity:0;
+        transform:scale(0.98);
+    }
+
+    100%{
+        opacity:0;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+<div class="logo">
+<img src="BIT LOGO.webp" alt="BIT Logo">
+<div>
+<h2>BIT Bangalore</h2>
+<p>ECE Department</p>
+</div>
+</div>
+
+<nav>
+<a href="#about">About</a>
+<a href="#student">Profile</a>
+<a href="#attendance">Attendance</a>
+<a href="#academics">Academics</a>
+<a href="#achievements">Achievements</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-left">
+
+<h3>Electronics & Communication Engineering</h3>
+
+<h1>AKARSH KESTHUR</h1>
+
+<p>
+Second Semester ECE student at Bangalore Institute of Technology.
+Alongside my B.E. degree, I am pursuing the BS in Electronics Systems
+program from IIT Madras. I am passionate about electronics,
+technology, programming, and artificial intelligence.
+</p>
+
+<div class="gpa">
+Previous Semester GPA : 8.35
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<img src="akarsh photo (2).jpg" alt="Student Photo">
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="card">
+
+<p style="line-height:2;">
+I am Akarsh Kesthur, a second-semester Electronics and Communication
+Engineering student at Bangalore Institute of Technology, Bengaluru.
+I am also pursuing a parallel BS Degree in Electronics Systems from
+IIT Madras. My interests include Electronics, Programming,
+Artificial Intelligence, and Emerging Technologies.
+</p>
+
+</div>
+
+</section>
+
+<section id="student">
+
+<h2 class="section-title">Student Information</h2>
+
+<div class="info-grid">
+
+<div class="info-item"><strong>Name:</strong> Akarsh Kesthur</div>
+<div class="info-item"><strong>USN:</strong> 1BI25EC005</div>
+
+<div class="info-item"><strong>Department:</strong> ECE</div>
+<div class="info-item"><strong>Semester:</strong> 2nd Semester</div>
+
+<div class="info-item"><strong>DOB:</strong> 15/08/2007</div>
+<div class="info-item"><strong>Contact:</strong> 9972378596</div>
+
+<div class="info-item"><strong>Email:</strong> akarshkesthur57@gmail.com</div>
+
+<div class="info-item">
+<strong>Address:</strong>
+No 1069, 35th D Cross,
+4th T Block, Jayanagar,
+Bengaluru - 560041
+</div>
+
+</div>
+
+</section>
+
+<section id="attendance">
+
+<h2 class="section-title">Attendance Details</h2>
+
+<table>
+
+<tr>
+<th>Subject</th>
+<th>Classes Held</th>
+<th>Attended</th>
+<th>Attendance</th>
+</tr>
+
+<tr>
+<td>FEC</td>
+<td>40</td>
+<td>38</td>
+<td>95%</td>
+</tr>
+
+<tr>
+<td>EIT</td>
+<td>35</td>
+<td>33</td>
+<td>94%</td>
+</tr>
+
+<tr>
+<td>MATHEMATICS</td>
+<td>30</td>
+<td>29</td>
+<td>97%</td>
+</tr>
+
+<tr>
+<td>PHYSICS</td>
+<td>35</td>
+<td>33</td>
+<td>94%</td>
+</tr>
+
+</table>
+
+</section>
+
+<section id="academics">
+
+<h2 class="section-title">Academic Performance</h2>
+
+<table>
+
+<tr>
+<th>Subject</th>
+<th>Marks (Out of 50)</th>
+</tr>
+
+<tr>
+<td>FEC</td>
+<td>30</td>
+</tr>
+
+<tr>
+<td>EIT</td>
+<td>35</td>
+</tr>
+
+<tr>
+<td>MATHEMATICS</td>
+<td>35</td>
+</tr>
+
+<tr>
+<td>PHYSICS</td>
+<td>39</td>
+</tr>
+
+</table>
+
+</section>
+
+<section id="achievements">
+
+<h2 class="section-title">Achievements & Certifications</h2>
+
+<div class="achievement-layout">
+
+<div>
+
+<ul>
+
+<li>Pursuing BS in Electronics Systems from IIT Madras.</li>
+
+<li>Completed IBM Foundation Level Certification in Artificial Intelligence.</li>
+
+<li>Actively developing skills in Electronics, Programming and Technology.</li>
+
+</ul>
+
+</div>
+
+<div class="achievement-slider">
+
+    <img src="WhatsApp Image 2026-05-31 at 14.25.44.jpeg" alt="Profile Photo" class="slide">
+
+    <img src="cer.jpeg" alt="IITM BS" class="slide">
+
+    <img src="download.jpg" alt="BIT Logo" class="slide">
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Future Goals</h2>
+
+<div class="goal-box">
+
+To build strong expertise in Electronics and Communication Engineering,
+develop practical skills through projects and internships,
+contribute to innovative technology solutions,
+and pursue higher studies and research opportunities in the future.
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Placement Details</h2>
+
+<div class="card placement">
+
+<h3>Not Applicable</h3>
+
+<p>Currently pursuing 2nd Semester B.E. in Electronics & Communication Engineering.</p>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">Contact Information</h2>
+
+<div class="contact">
+
+<div>
+<h3>Email</h3>
+<p>akarshkesthur57@gmail.com</p>
+</div>
+
+<div>
+<h3>Phone</h3>
+<p>9972378596</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p><strong>Akarsh Kesthur</strong></p>
+<p>USN: 1BI25EC005</p>
+<p>Bangalore Institute of Technology</p>
+
+</footer>
+
+</body>
+</html>  
